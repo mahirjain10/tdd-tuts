@@ -1,0 +1,23 @@
+name: Checkpoint 3
+on:
+  push:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Run the linter
+      run: echo "Linting" 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Run the test
+      run: echo "Testing" 
+  deploy:
+    needs: |
+      lint
+      test
+    runs-on: ubuntu-latest
+    steps:
+      -name: Run the deploy
+      run: echo "WAAOHH DEPLOYING..."
