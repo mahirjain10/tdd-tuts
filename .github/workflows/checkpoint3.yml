@@ -14,9 +14,7 @@ jobs:
       - name: Run the test
         run: echo "Testing" 
   deploy:
-    needs: |
-      lint
-      test
+    needs: [lint,test]
     runs-on: ubuntu-latest
     steps:
       - name: Run the deploy
