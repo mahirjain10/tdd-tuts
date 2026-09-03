@@ -9,8 +9,9 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v7
         - name: Run the build command
-          run: go build .
-          run: echo "Building..."
+          run: | 
+            go build .
+            echo "Building..."
     deploy:
       needs: build
       runs-on: ubuntu-latest
