@@ -1,0 +1,23 @@
+name: jobs-demo
+on: 
+  push:
+    branches: [main]
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v7
+        - name: Go action
+          uses: actions/setup-go@v7
+          with:
+            go-version: '1.25' 
+        - name: Run the build command
+          run: | 
+            go build .
+            echo "Building..."
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Deploying"
