@@ -24,4 +24,5 @@ jobs:
         uses: actions/setup-go@v7
         with:
           go-version: '1.25' 
+      - name: "Deploy it" 
         run: echo "WAAOHH DEPLOYING..."
