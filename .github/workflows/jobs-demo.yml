@@ -11,7 +11,7 @@ jobs:
         - name: Go action
           uses: actions/setup-go@v7
           with:
-            go-version: '1.25' 
+            go-version: '1.26.3' 
         - name: Run the build command
           run: | 
             go build .
