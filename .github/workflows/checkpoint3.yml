@@ -6,18 +6,18 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      -name: Run the linter
-      run: echo "Linting" 
+      - name: Run the linter
+        run: echo "Linting" 
   test:
     runs-on: ubuntu-latest
     steps:
-      -name: Run the test
-      run: echo "Testing" 
+      - name: Run the test
+        run: echo "Testing" 
   deploy:
     needs: |
       lint
       test
     runs-on: ubuntu-latest
     steps:
-      -name: Run the deploy
-      run: echo "WAAOHH DEPLOYING..."
+      - name: Run the deploy
+        run: echo "WAAOHH DEPLOYING..."
