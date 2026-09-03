@@ -9,6 +9,7 @@ jobs:
       - name: Run the linter
         run: echo "Linting" 
   test:
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - name: Run the test
