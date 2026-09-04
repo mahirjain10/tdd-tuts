@@ -1,0 +1,14 @@
+name: Checkpoint 4
+on:
+  push:
+    branches: [main]
+jobs:
+    build:
+    steps:
+        - name: Checkout repository
+          uses: actions/checkout@v7
+        - name: Python action
+        - uses: actions/setup-python@v7
+          with:
+            python-version: '3.13' 
+          run: echo "${{python --version}}"
