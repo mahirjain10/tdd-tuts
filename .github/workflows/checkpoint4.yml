@@ -8,7 +8,7 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v7
         - name: Python action
-        - uses: actions/setup-python@v7
+          uses: actions/setup-python@v7
           with:
             python-version: '3.13' 
           run: echo "${{python --version}}"
