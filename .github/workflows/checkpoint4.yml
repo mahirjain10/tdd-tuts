@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: '3.13' 
       - name: Check verison
-        run: echo "${{python --version}}"
+        run: python --version
