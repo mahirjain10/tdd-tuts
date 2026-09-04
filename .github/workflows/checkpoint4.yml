@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 jobs:
-    build:
+  build:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
