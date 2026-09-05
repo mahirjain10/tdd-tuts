@@ -14,7 +14,7 @@ jobs:
             go-version: '1.26.3' 
         - name: Run the build command
           run: | 
-            go build ./doesntexist
+            go build .
             echo "Building..."
         - name: Notify on failure
           if: failure()
