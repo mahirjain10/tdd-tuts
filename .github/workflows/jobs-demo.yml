@@ -1,0 +1,25 @@
+name: jobs-demo
+on: 
+  push:
+    branches: [main]
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v7
+        - name: Go action
+          uses: actions/setup-go@v7
+          with:
+            go-version: '1.26.3' 
+        - name: Run the build command
+          run: | 
+            go build ./doesntexist
+            echo "Building..."
+          if: failure()
+          run: echo "Build failed, check the logs" 
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Deploying"
