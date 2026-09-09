@@ -6,8 +6,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Let is fail
-        run: exit 1
+      - name: Let it not fail
+        run: echo "you aint gonna fail"
       - name: This should get skipped
         run: echo "Did this run?
   report:
