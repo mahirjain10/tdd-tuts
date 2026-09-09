@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Let is fail
         run: exit 1
+      - name: This should get skipped
+        run: echo "Did this run?
   report:
     needs: check
     runs-on: ubuntu-latest
