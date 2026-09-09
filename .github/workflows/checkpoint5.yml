@@ -1,0 +1,18 @@
+name: Checkppoint 5
+on: 
+  push:
+    branches: [main]
+jobs:
+  check:
+  runs-on: ubuntu-latest
+  steps:
+    name: Let is fail
+    run: exit 1
+  report:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      name: Report result
+      if: always()
+      run: echo "Pipeline finished — check ${{ github.actor }} for details"
+ 
