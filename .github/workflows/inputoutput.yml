@@ -15,7 +15,7 @@ jobs:
       app_version: ${{ steps.app_version_id.outputs.app_version }}
     steps:
       - id: app_version_id
-        run: echo 'app_version=4.1.2' <<  "$GITHUB_OUTPUT"
+        run: echo 'app_version=4.1.2' >> "$GITHUB_OUTPUT"
   deploy:
     needs: build
     runs-on: ubuntu-latest
