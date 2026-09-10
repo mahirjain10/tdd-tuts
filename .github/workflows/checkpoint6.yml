@@ -1,0 +1,24 @@
+name: Checkpoint 6
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: 'target env'
+        required: true
+        default:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{steps.write_output.outputs.version}}
+    steps: 
+      - id: write_output
+        run: echo "version=2.91" >> $GITHUB_OUTPUT
+  notify:
+    needs: build
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Print the input and output
+        run: echo "input ${{inputs.target_env}} and output ${{needs.build.outputs.version}}
