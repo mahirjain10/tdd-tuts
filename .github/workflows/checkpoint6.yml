@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - name: Print the input and output
-        run: echo "input ${{inputs.target_env}} and output ${{needs.build.outputs.version}}
+        run: echo "input ${{inputs.target_env}} and output ${{needs.build.outputs.version}}"
