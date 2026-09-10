@@ -22,5 +22,5 @@ jobs:
     steps:
       - name: Print the output
         run: |
-          echo "output: ${{needs.build.outputs.app-version}}"
+          echo "output: ${{needs.build.outputs.app_version}}"
           echo "input: ${{ inputs.environment }}"
