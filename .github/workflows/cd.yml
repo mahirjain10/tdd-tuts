@@ -1,12 +1,7 @@
 name: Learning CD
 on:
   push:
-    branches: ['v*']
-  workflow_dispatch:
-    inputs:
-      versions:
-        description: version of the code
-        required: true
+    tags: ['v*']
 jobs:
   deploy:
       runs-on: ubuntu-latest
