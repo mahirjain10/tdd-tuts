@@ -5,11 +5,12 @@ on:
 
 jobs:
   release:
+    runs-on: ubuntu-latest
+    permissions: 
+        contents: write 
     steps:
       - uses: actions/checkout@v7
       - name:  Create GitHub Release
         run: gh release create ${{ github.ref_name }} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        permissions:
-          contents: write
