@@ -1,20 +1,16 @@
-name: matrix
-on:
-  push:
-    branches: [main]
+name: checkpoint 9
+on: 
+  branches: [main]
 jobs:
-  e2e:
+  build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome,edge,brave]
-        screen: [mobile,tablet,laptop]
+        browser: [edge,chrome,brave]
+        screen: [desktop,mobile,tablet]
         exclude:
-          - browser: chrome
-            screen: mobile
-        include: 
-          - browser: helium
+          - browser: edge
             screen: desktop
     steps:
       - uses: actions/checkout@v7
