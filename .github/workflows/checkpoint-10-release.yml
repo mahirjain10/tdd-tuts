@@ -1,0 +1,14 @@
+name: Checkpoint 10 - Release
+on:
+  push:
+    tags: [v*]
+
+jobs:
+  release:
+    - uses: actions/checkout@v7
+    - name:  Create GitHub Release
+      run: gh release create ${{ github.ref_name }} --generate-notes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      permissions:
+        contents: write

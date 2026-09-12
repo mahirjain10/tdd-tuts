@@ -1,0 +1,14 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: version of the code
+        required: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: WAVWAV Deploying
+        run: echo "${{inputs.version}}" 
